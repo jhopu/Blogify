@@ -15,10 +15,19 @@ class AppTheme{
       backgroundColor: AppPallete.backgroundColor,
     ),
   scaffoldBackgroundColor: AppPallete.backgroundColor,
+    chipTheme: ChipThemeData(
+      padding: EdgeInsets.all(20),
+      color: MaterialStatePropertyAll(
+        AppPallete.backgroundColor,
+      ),
+      side:BorderSide.none,
+    ),
     inputDecorationTheme: InputDecorationTheme(
       contentPadding: EdgeInsets.all(27),
+      border: _border(),
       enabledBorder: _border(),
       focusedBorder: _border(AppPallete.gradient2),
+      errorBorder: _border(AppPallete.errorColor),
     ),
   );
 }

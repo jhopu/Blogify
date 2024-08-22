@@ -16,7 +16,7 @@ class AppTheme{
     ),
   scaffoldBackgroundColor: AppPallete.backgroundColor,
     chipTheme: ChipThemeData(
-      padding: EdgeInsets.all(20),
+      padding: EdgeInsets.all(15),
       color: MaterialStatePropertyAll(
         AppPallete.backgroundColor,
       ),

@@ -35,7 +35,10 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource{
         throw ServerException('User is null!');
       }
       return UserModel.fromJson(respone.user!.toJson());
-    }catch(e){
+    }on AuthException catch(e){
+      return throw ServerException(e.message);
+    }
+    catch(e){
       throw ServerException(e.toString());
     }
   }
@@ -52,7 +55,10 @@ if(respone.user==null){
   throw ServerException('User is null!');
 }
 return UserModel.fromJson(respone.user!.toJson());
-   }catch(e){
+   }on AuthException catch(e){
+     return throw ServerException(e.message);
+   }
+   catch(e){
 throw ServerException(e.toString());
    }
   }
